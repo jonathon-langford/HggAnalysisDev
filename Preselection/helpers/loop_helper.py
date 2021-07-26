@@ -235,7 +235,10 @@ class LoopHelper():
 
         events_and_objects = {}
 
-        if "HHggTauTau_InclusivePresel" in self.selections:
+        if "Resonant_HHggtautau_InclusivePresel" in self.selections:
+            selected_events = analysis_selections.resonant_HH_ggtautau_preselection(diphoton_events, selected_photons, diphoton_events.Electron, diphoton_events.Muon, diphoton_events.Tau, diphoton_events.Jet, diphoton_events.dR_tautauSVFitLoose, diphoton_events.Category_pairsLoose,options, self.debug)
+
+        elif "HHggTauTau_InclusivePresel" in self.selections:
             if "genZStudy" in self.selections and not options["data"]:
                 gen_events = diphoton_events.GenPart
             else:

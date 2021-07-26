@@ -1,0 +1,170 @@
+{
+    "radionM300_HHggtautau" : { 
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : -1,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/radionM300_HHggtautau_Era2018_private_mc18"],
+            "metadata" : { "xs" : 1. }
+        } 
+    },
+
+    "radionM400_HHggtautau" : { 
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : -2,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/radionM400_HHggtautau_Era2018_private_mc18"],
+            "metadata" : { "xs" : 1. }
+        } 
+    },
+
+    "radionM500_HHggtautau" : { 
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : -3,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/radionM500_HHggtautau_Era2018_private_mc18"],
+            "metadata" : { "xs" : 1. }
+        } 
+    },
+
+    "radionM800_HHggtautau" : { 
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : -4,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/radionM800_HHggtautau_Era2018_private_mc18"],
+            "metadata" : { "xs" : 1. }
+        } 
+    },
+
+    "radionM1000_HHggtautau" : { 
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : -5,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/radionM1000_HHggtautau_Era2018_private_mc18"],
+            "metadata" : { "xs" : 1. }
+        } 
+    },
+
+    "Data" : {
+        "resonant" : true,
+        "fpo" : 25,
+        "process_id" : 0,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/data/2018/EGamma_Run2018A_private_data18/", "/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/data/2018/EGamma_Run2018B_private_data18/", "/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/data/2018/EGamma_Run2018C_private_data18/", "/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/data/2018/EGamma_Run2018D_private_data18/"],
+            "metadata" : {}
+        }
+    },
+
+    "ZGamma" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 2,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/ZGToLLG_01J_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8_private_mc18_2/", "/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/ZGToLLG_01J_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8_private_mc18_3/", "/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/ZGToLLG_01J_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8_private_mc18/"],
+            "metadata" : { "xs" : 55.6 }
+        }
+    },
+    "DiPhoton" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 3,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/DiPhotonJetsBox_MGG-80toInf_13TeV-Sherpa_private_mc18/"], 
+            "metadata" : { "xs" : 84.4 }
+        }
+    },
+    "WGamma" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 4,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/WGToLNuG_01J_5f_TuneCP5_13TeV-amcatnloFXFX-pythia8_private_mc18"],
+            "metadata" : { "xs" : 191.4 }
+        }
+    },
+    "TTbar" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 5,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/TTJets_TuneCP5_13TeV-amcatnloFXFX-pythia8_private_mc18"], 
+            "metadata" : { "xs" : 831.76 }
+        }
+    },
+    "TTGamma" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 6,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/TTGJets_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8_private_mc18"],
+            "metadata" : { "xs" : 4.078 }
+        }
+    },
+    "TTGG" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 7,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/TTGG_0Jets_TuneCP5_13TeV_amcatnlo_madspin_pythia8_private_mc18"],
+            "metadata" : { "xs" : 0.01687 }
+        }
+    },
+    "GJets_HT40To100" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 8,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/GJets_HT-40To100_TuneCP5_13TeV-madgraphMLM-pythia8_private_mc18"],
+            "metadata" : { "xs" : 23100.0 }
+        }
+    },
+    "GJets_HT-100To200" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 8,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/GJets_HT-100To200_TuneCP5_13TeV-madgraphMLM-pythia8_private_mc18"],
+            "metadata" : { "xs" : 8631.0 }
+        }
+    },
+    "GJets_HT-200To400" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 8,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/GJets_HT-200To400_TuneCP5_13TeV-madgraphMLM-pythia8_private_mc18"],
+            "metadata" : { "xs" : 2280.0 }
+        }
+    },
+    "GJets_HT-400To600" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 8,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/GJets_HT-400To600_TuneCP5_13TeV-madgraphMLM-pythia8_private_mc18"],
+            "metadata" : { "xs" : 273.0 }
+        }
+    },
+    "GJets_HT-600ToInf" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 8,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/GJets_HT-600ToInf_TuneCP5_13TeV-madgraphMLM-pythia8_private_mc18"],
+            "metadata" : { "xs" : 94.5 }
+        }
+    },
+    "VH" : {
+        "resonant" : true,
+        "fpo" : 10,
+        "process_id" : 9,
+        "2018" : {
+            "paths" : ["/eos/home-j/jlangfor/postdoc/hhggtt/Jun21/samples/MC/2018/VHToGG_M125_13TeV_amcatnloFXFX_madspin_pythia8_private_mc18"],
+            "metadata" : { "xs" : 0.00512 }
+        }
+    }
+}
