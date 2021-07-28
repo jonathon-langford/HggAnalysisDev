@@ -28,6 +28,7 @@ class LoopHelper():
         self.select_samples = kwargs.get("select_samples")
         if self.select_samples != "all":
             self.select_samples = self.select_samples.split(",")
+        self.getFromXRootD = kwargs.get("getFromXRootD")
 
         self.output_tag = kwargs.get("output_tag")
         self.output_dir = kwargs.get("output_dir")
@@ -112,10 +113,14 @@ class LoopHelper():
                 files = []
                 if year not in self.years:
                     continue
+                 
                 for path in year_info["paths"]:
-                    files += glob.glob(path + "/*.root")
-                    files += glob.glob(path + "/*/*.root")
-                    files += glob.glob(path + "/*/*/*/*.root") # to be compatible with CRAB
+                    if self.getFromXRootD:
+                        files += self.get_files_from_xrd(path)
+                    else:
+                        files += glob.glob(path + "/*.root")
+                        files += glob.glob(path + "/*/*.root")
+                        files += glob.glob(path + "/*/*/*/*.root") # to be compatible with CRAB
 
                 if len(files) == 0:
                     continue
@@ -360,6 +365,39 @@ class LoopHelper():
             # library = "ak" to load arrays as awkward arrays for best performance
             # how = "zip" allows us to access arrays as records, e.g. events.Photon
         return events, photons
+
+    def get_files_from_xrd(self, directory, maxFolders=5):
+        """
+        Get list of files from an xrootd directory with xrdfs ls command"
+
+        :param directory: directory (in xrootd format) to glob files from
+        :type directory: str
+        :return: list of all root files from directory
+        :rtype: list of str
+        """
+        files = []
+
+        idx = directory.find("//store") + 1
+        redirector = directory[:idx]
+        dir = directory[idx:]
+
+        command = "xrdfs %s ls %s" % (redirector, dir)
+
+        # Keep entering dir until files are found/max folders has been reach
+        folderItr = 0
+        while( len(files) == 0 )&( folderItr < maxFolders ):
+            print(" [JONNO DEBUG] command = %s"%command)
+            contents = os.popen(command).read().split("\n")
+            for x in contents:
+                if x == '': continue
+                elif x.endswith(".root"):
+                    files.append(redirector + x)
+                else:
+                  # Add new dir to command
+                  command = "xrdfs %s ls %s" % (redirector, x)
+            folderItr += 1
+
+        return files
 
     def chunks(self, files, fpo):
         for i in range(0, len(files), fpo):

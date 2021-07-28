@@ -35,6 +35,13 @@ parser.add_argument(
     type = str,
     default = "all"
 )
+# Option to extract list of files from xrootd
+parser.add_argument(
+    "--getFromXRootD",
+    help = "extract files directly from xrootd",
+    action = "store_true",
+    default = False
+)
 
 # --options points to a json file containing options for looping
 # this could include things like additional scaling of bkg samples,

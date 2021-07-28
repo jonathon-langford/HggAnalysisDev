@@ -32,6 +32,13 @@ parser.add_argument(
     action = "store_true"
 )
 parser.add_argument(
+    "--getFromXRootD",
+    help = "Extract files from xrd",
+    action = "store_true",
+    default = False
+)
+
+parser.add_argument(
     "--debug",
     help = "debug",
     type = int,
@@ -72,6 +79,41 @@ def calculate_metadata(files, xs, debug):
     }
     return results
 
+# Function to extract list of files from XRootD
+def get_files_from_xrd(directory, maxFolders=5):
+    """
+    Get list of files from an xrootd directory with xrdfs ls command"
+
+    :param directory: directory (in xrootd format) to glob files from
+    :type directory: str
+    :return: list of all root files from directory
+    :rtype: list of str
+    """
+    files = []
+
+    idx = directory.find("//store") + 1
+    redirector = directory[:idx]
+    dir = directory[idx:]
+
+    command = "xrdfs %s ls %s" % (redirector, dir)
+
+    # Keep entering dir until files are found/max folders has been reach
+    folderItr = 0
+    while( len(files) == 0 )&( folderItr < maxFolders ):
+        print(" [JONNO DEBUG] command = %s"%command)
+        contents = os.popen(command).read().split("\n")
+        for x in contents:
+            if x == '': continue
+            elif x.endswith(".root"):
+                files.append(redirector + x)
+            else:
+              # Add new dir to command
+              command = "xrdfs %s ls %s" % (redirector, x)
+        folderItr += 1
+
+    return files
+
+
 ### Main script ###
 if args.debug > 0:
     print("[scale1fb.py] Running scale1fb.py with options:", args)
@@ -105,10 +147,14 @@ for sample, info in samples.items():
         # Grab metadata
         files = []
         for path in year_info["paths"]:
-            files += glob.glob(path + "/*.root")
-            files += glob.glob(path + "/*/*/*/*.root") # to be compatible with CRAB
+
+            if args.getFromXRootD:
+              files += get_files_from_xrd(path)
+            else: 
+              files += glob.glob(path + "/*.root")
+              files += glob.glob(path + "/*/*/*/*.root") # to be compatible with CRAB
   
-            print(" [JONNO DEBUG] files = %s"%files)
+        print(" [JONNO DEBUG] files = %s"%files)
 
         if "xs" not in year_info["metadata"].keys():
             if args.debug > 0:

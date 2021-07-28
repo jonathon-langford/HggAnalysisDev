@@ -25,6 +25,9 @@ pip install matplotlib
 pip install zfit
 pip install tensorflow
 
+# For extracting files
+#pip install xrootd
+
 
 mkdir -p Preselection/output/
 mkdir -p MVAs/output/
